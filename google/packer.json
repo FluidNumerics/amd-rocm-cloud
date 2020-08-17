@@ -1,0 +1,26 @@
+{
+  "variables": {
+    "project_id": "",
+    "subnet": "default",
+    "zone":"us-west1-a",
+    "source_image":"ubuntu-2004-focal-v20200810",
+    "source_image_project_id":"ubuntu-os-cloud",
+    "startup_script":"../scripts/centos/startup-script.sh"
+  },
+  "builders": [{
+    "type": "googlecompute",
+    "project_id": "{{user `project_id`}}",
+    "source_image": "{{user `source_image`}}",
+    "source_image_project_id": "{{user `source_image_project_id`}}",
+    "disk_size": 25,
+    "zone": "{{user `zone`}}",
+    "subnetwork" :"{{user `subnet`}}",
+    "image_family": "rocm-{{user `source_image`}}",
+    "image_name": "rocm-{{user `source_image`}}-{{timestamp}}",
+    "instance_name":"rocm-image-node",
+    "tags":["cloudbuild"],
+    "ssh_username": "packer",
+    "startup_script_file": "{{user `startup_script`}}"
+  }]
+}
+

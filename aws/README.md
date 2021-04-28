@@ -3,6 +3,8 @@
 #
 
 environment variables used at head of packer.json must be set and environment variables e.g.
+
+```
        "variables": {
 	   "vpc": "{{env `BUILD_VPC_ID`}}",
 	   "subnet": "{{env `BUILD_SUBNET_ID`}}",
@@ -13,6 +15,7 @@ environment variables used at head of packer.json must be set and environment va
 	   "ssh_keypair": "{{env `SSH_KEYPAIR`}}",
 	   "ssh_private_key_file": "{{env `SSH_PRIVATE_KEY_FILE`}}"
         },
+```
 
 
 Once set this script can be executed using command

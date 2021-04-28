@@ -27,6 +27,6 @@ packer build packer.json
 This will create an AMI in the account of AWS_ACCESS_KEY that can then be use to create a VM instance with an
 AMD GPU on, for example, a g4ad.4xlarge instance and the AMD GPU will be visible to rocminfo.
 
-An image created this way can useful for creating Singularity images for AMD GPUs for systems where root privileges 
+An image created this way can be useful for creating Singularity images for AMD GPUs for systems where root privileges 
 are not available.
 
